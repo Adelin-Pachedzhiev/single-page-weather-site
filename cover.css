@@ -16,15 +16,16 @@
  * Base structure
  */
 
+ /* 4F4789 */
+ /* #55917F */
 body {
+  background-color: #544A7D;
   text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
   box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
-  /* min-height: 100%; added */
 }
 
 .cover-container {
   max-width: 42em;
-  /* min-height: 100%; added */
 }
 
 
@@ -67,5 +68,40 @@ body {
     font-size: 3.5rem;
   }
 
+
+}
+.word-details,
+.definition,
+.errors{
+  border-radius: 1rem;
+  background: #201345;
+  padding: 0.75rem;
+  /* margin: 0.5rem; */
+
+}
+
+.definition + .definition,
+.word-details + .definition,
+.errors{
+  margin: 1rem 0;
+}
+#input{
+  margin: 0.75rem 4rem 0 0;
+  border-radius: 0.75rem;
+  padding: 0.5rem 1rem;
+  
+}
+
+#search-button{
+  background: #FFB17A;
+  border-color: #FFB17A;
+  border-radius: 0.75rem;
+  padding: 0.5rem;
+
+}
+
+#search-button:hover{
+  background-color: #dd9867;
+  border-color: #dd9867;
 
 }

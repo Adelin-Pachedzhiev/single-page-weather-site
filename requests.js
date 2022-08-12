@@ -10,12 +10,11 @@ definitionsElement.style.display = "None";
 
 button.addEventListener("click", searchWord);
 
-
 let lastWordSearched = "";
 
 //checks if given word is alphabetic
 function isAlpha(str) {
-    return /^[a-zA-Z()]+$/.test(str);
+    return /^[a-z A-Z()]+$/.test(str);
   }
 
 // gets the word from the user
@@ -87,7 +86,12 @@ function writeDefinition(wordObj){
 
     const word = document.getElementById("word-details");
     word.getElementsByTagName("h2")[0].textContent = wordObj[0].word;
-    word.getElementsByTagName("p")[0].textContent = wordObj[0].phonetic
+    try{
+        word.getElementsByTagName("p")[0].textContent = wordObj[0].phonetics[0].text;
+        word.getElementsByTagName("p")[0].style.display= "Block";
+    } catch{ 
+        word.getElementsByTagName("p")[0].style.display= "None";
+    }
 
     for (const definition of wordObj) {
 
